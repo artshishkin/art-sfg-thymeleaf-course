@@ -12,16 +12,50 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"
-            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"
-            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>This is a heading</h1>
-<h2>This is heading 2</h2>
-<p style="color: red">This is paragraph red</p>
-<p style="color: green">This is paragraph green</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>This is a heading</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>This is heading 2</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p style="color: red">This is paragraph red</p>
+        </div>
+        <div class="col-md-6">
+            <p style="color: green">This is paragraph green</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" style="background-color: gray">
+            <div class="row" style="color: aliceblue">
+                <div class="col-md-6" style="background-color: blueviolet">
+                    <p>Some</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Another</p>
+                </div>
+            </div>
+            <p style="color: red">This is paragraph red</p>
+        </div>
+        <div class="col-md-6" style="background-color: pink">
+            <p style="color: green">This is paragraph green</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
