@@ -1,4 +1,4 @@
-package com.artarkatesoft.artsfgthymeleafcourse.controller;
+package com.artarkatesoft.artsfgthymeleafcourse.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
