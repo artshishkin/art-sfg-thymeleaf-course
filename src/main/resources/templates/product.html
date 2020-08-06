@@ -154,7 +154,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Spring Intro Course - Course Name</h1>
+            <h1 th:text="#{product.course.name}">Spring Intro Course</h1>
         </div>
     </div>
     <div class="row">
@@ -174,7 +174,7 @@
     </div>
     <div class="row">
         <div class="col-md-offset-6 col-md-4">
-            <button class="btn-success">Buy Now!</button>
+            <button class="btn-success" th:text="#{product.button.buy}">Buy Now!</button>
         </div>
     </div>
 </div>
