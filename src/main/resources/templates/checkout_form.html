@@ -149,7 +149,7 @@
 <div class="container" style="height: 100vh;">
     <div class="row">
         <div class="col-md-12">
-            <h2>Checkout Form</h2>
+            <h2 th:text="#{checkoutForm.name}">Checkout Form</h2>
         </div>
     </div>
 
@@ -175,56 +175,67 @@
                 Errors</label>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('addressLine1')?'form-group has-error':'form-group'}">
-            <label class="col-sm-2 control-label">AddressLine1</label>
-            <div class="col-sm-8">
+            <label class="col-sm-2 control-label" th:text="#{command.addressLine1}">AddressLine1</label>
+            <div class="col-sm-10">
                 <input type="text" class="form-control" value="Addr1" th:field="*{addressLine1}"
                        th:errorclass="has-error">
+                <span th:if="${#fields.hasErrors('addressLine1')}" class="help-block">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('addressLine1')}" th:text="${err}">addressLine1 Errors</li>
+                    </ul>
+                </span>
             </div>
-            <label th:if="${#fields.hasErrors('addressLine1')}" th:errors="*{addressLine1}" class="col-sm-2">
-                addressLine1 Errors
-            </label>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('addressLine2')?'form-group has-error':'form-group'}">
-            <label class="col-sm-2 control-label">AddressLine2</label>
-            <div class="col-sm-8">
+            <label class="col-sm-2 control-label" th:text="#{command.addressLine2}">AddressLine2</label>
+            <div class="col-sm-10">
                 <input type="text" class="form-control" value="Addr2" th:field="*{addressLine2}"
                        th:errorclass="has-error">
+                <span th:if="${#fields.hasErrors('addressLine2')}" class="help-block">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('addressLine2')}" th:text="${err}">addressLine2 Errors</li>
+                    </ul>
+                </span>
             </div>
-            <label th:if="${#fields.hasErrors('addressLine2')}" th:errors="*{addressLine2}"  class="col-sm-2">
-                addressLine2 Errors
-            </label>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('city')?'form-group has-error':'form-group'}">
-            <label class="col-sm-2 control-label">City</label>
-            <div class="col-sm-8">
+            <label class="col-sm-2 control-label" th:text="#{command.city}">City</label>
+            <div class="col-sm-10">
                 <input type="text" class="form-control" value="City K" th:field="*{city}" th:errorclass="has-error">
+                <span class="help-block" th:if="${#fields.hasErrors('city')}">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('city')}" th:text="${err}">city Errors</li>
+                    </ul>
+                </span>
             </div>
-            <label th:if="${#fields.hasErrors('city')}" th:errors="*{city}"  class="col-sm-2">city Errors</label>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('stateCode')?'form-group has-error':'form-group'}">
-            <label class="col-sm-2 control-label">State Code</label>
-            <div class="col-sm-8">
+            <label class="col-sm-2 control-label" th:text="#{command.stateCode}">State Code</label>
+            <div class="col-sm-10">
                 <input type="text" class="form-control" value="StateCode" th:field="*{stateCode}"
                        th:errorclass="has-error">
+                <span class="help-block" th:if="${#fields.hasErrors('stateCode')}">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('stateCode')}" th:text="${err}">stateCode Errors</li>
+                    </ul>
+                </span>
             </div>
-            <label th:if="${#fields.hasErrors('stateCode')}" th:errors="*{stateCode}" class="col-sm-2" th:errorclass="has-error">
-                stateCode Errors
-            </label>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('zipCode')?'form-group has-error':'form-group'}">
-            <label class="col-sm-2 control-label">Zip Code</label>
-            <div class="col-sm-8">
+            <label class="col-sm-2 control-label" th:text="#{command.zipCode}">Zip Code</label>
+            <div class="col-sm-10">
                 <input type="text" class="form-control" value="ZIP" th:field="*{zipCode}" th:errorclass="has-error">
+                <span class="help-block" th:if="${#fields.hasErrors('zipCode')}">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('zipCode')}" th:text="${err}">zipCode Errors</li>
+                    </ul>
+                </span>
             </div>
-            <label th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}" class="error has-error col-sm-2">zipCode
-                Errors
-            </label>
         </div>
         <div class="row">
-            <button class="btn btn-default" type="submit">Submit</button>
+            <button class="btn btn-default" type="submit" th:text="#{button.submit}">Submit</button>
         </div>
     </form>
-
 </div>
 
 <!--<div class="container" th:replace="fragments/footer :: my_footer">-->
