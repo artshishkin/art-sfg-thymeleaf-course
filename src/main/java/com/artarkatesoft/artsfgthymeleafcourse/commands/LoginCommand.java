@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class LoginCommand {
     @NotEmpty
     @Size(min = 3, max = 255)
-    private String userName;
+    private String username;
     @NotEmpty
     @Size(min = 3)
     private String password;
