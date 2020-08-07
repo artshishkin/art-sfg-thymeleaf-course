@@ -154,20 +154,28 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 th:text="#{product.course.name}">Spring Intro Course</h1>
+            <h1 th:text="${product.courseName}">Spring Intro Course</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-                <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
-                     th:src="@{/images/SpringIntroThumb.png}"
-                     class="center-block">
+            <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
+                 th:src="@{/images/{imgUrl}(imgUrl=${product.imageUrl})}"
+                 class="center-block">
         </div>
-        <div class="col-md-6" >
+        <div class="col-md-6">
             <div>
-                <h2>Course Title</h2>
-                <p>In egestas suscipit consectetur scelerisque per nisl parturient ipsum vel risus placerat orci eros purus sem nisl a leo ipsum sociosqu integer suspendisse sodales. Vehicula a a bibendum consectetur dignissim sodales a cubilia sociosqu sapien blandit parturient cubilia fermentum venenatis mi et litora a. Inceptos phasellus vestibulum a neque per litora amet vivamus parturient eros nulla hendrerit ac cubilia suspendisse massa ad augue libero a aliquam lacinia. Id lacinia quam adipiscing tortor vitae lacus proin a feugiat cum integer cubilia a faucibus phasellus parturient dis. Nibh porttitor a penatibus malesuada at a in a a non quam enim suspendisse porttitor feugiat condimentum etiam eu.
-                    Accumsan bibendum rutrum sapien hendrerit malesuada vestibulum praesent interdum quisque ligula ullamcorper risus leo urna et ut adipiscing vulputate justo posuere vestibulum.
+                <h2 th:text="${product.courseSubtitle}">Course Title</h2>
+                <p th:text="${product.courseDescription}">In egestas suscipit consectetur scelerisque per nisl
+                    parturient ipsum vel risus placerat orci eros purus sem nisl a leo ipsum sociosqu integer
+                    suspendisse sodales. Vehicula a a bibendum consectetur dignissim sodales a cubilia sociosqu sapien
+                    blandit parturient cubilia fermentum venenatis mi et litora a. Inceptos phasellus vestibulum a neque
+                    per litora amet vivamus parturient eros nulla hendrerit ac cubilia suspendisse massa ad augue libero
+                    a aliquam lacinia. Id lacinia quam adipiscing tortor vitae lacus proin a feugiat cum integer cubilia
+                    a faucibus phasellus parturient dis. Nibh porttitor a penatibus malesuada at a in a a non quam enim
+                    suspendisse porttitor feugiat condimentum etiam eu.
+                    Accumsan bibendum rutrum sapien hendrerit malesuada vestibulum praesent interdum quisque ligula
+                    ullamcorper risus leo urna et ut adipiscing vulputate justo posuere vestibulum.
                 </p>
             </div>
         </div>
