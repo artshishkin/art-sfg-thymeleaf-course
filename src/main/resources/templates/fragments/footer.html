@@ -3,8 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Spring Framework Guru - Course Name</title>
-
+    <title th:text="#{index.page.title}">Page Title</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css}"
@@ -22,7 +21,6 @@
             crossorigin="anonymous"></script>
 
     <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen">
-
     <style th:remove="all">
         .jumbotron {
             background: url('https://d2vvqscadf4c1f.cloudfront.net/rGIBmJUAT46UuLPwXo3K_Fedora_Core_Ultimate2.jpg') no-repeat center center;
@@ -97,6 +95,10 @@
             border: 0 none;
         }
 
+        .img-face {
+            height: 30px;
+        }
+
         .course-listing .course-listing-title {
             color: #6cb44a;
             font-size: 18px;
@@ -143,42 +145,7 @@
 
 </head>
 <body>
-
-<div class="jumbotron" th:replace="fragments/header_jumbotron :: jumbotron">
-    <div class="container">
-        <h1>Spring Framework Guru</h1>
-        <p class="lead">Online Courses for Spring Framework</p>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 th:text="#{product.course.name}">Spring Intro Course</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-                <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
-                     th:src="@{/images/SpringIntroThumb.png}"
-                     class="center-block">
-        </div>
-        <div class="col-md-6" >
-            <div>
-                <h2>Course Title</h2>
-                <p>In egestas suscipit consectetur scelerisque per nisl parturient ipsum vel risus placerat orci eros purus sem nisl a leo ipsum sociosqu integer suspendisse sodales. Vehicula a a bibendum consectetur dignissim sodales a cubilia sociosqu sapien blandit parturient cubilia fermentum venenatis mi et litora a. Inceptos phasellus vestibulum a neque per litora amet vivamus parturient eros nulla hendrerit ac cubilia suspendisse massa ad augue libero a aliquam lacinia. Id lacinia quam adipiscing tortor vitae lacus proin a feugiat cum integer cubilia a faucibus phasellus parturient dis. Nibh porttitor a penatibus malesuada at a in a a non quam enim suspendisse porttitor feugiat condimentum etiam eu.
-                    Accumsan bibendum rutrum sapien hendrerit malesuada vestibulum praesent interdum quisque ligula ullamcorper risus leo urna et ut adipiscing vulputate justo posuere vestibulum.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-offset-6 col-md-4">
-            <button class="btn-success" th:text="#{product.button.buy}">Buy Now!</button>
-        </div>
-    </div>
-</div>
-<div class="container" th:replace="fragments/footer :: my_footer">
+<div class="container" th:fragment="my_footer">
     <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
             <p class="navbar-text pull-left">© 2016 - Spring Framework Guru</p>
