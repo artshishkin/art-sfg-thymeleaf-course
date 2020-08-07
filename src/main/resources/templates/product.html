@@ -159,9 +159,30 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
-                 th:src="@{/images/{imgUrl}(imgUrl=${product.imageUrl})}"
-                 class="center-block">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="https://d2vvqscadf4c1f.cloudfront.net/scgeIJ9wRGGNWvK0jAld_ThumbFREE_01.png"
+                         th:src="@{/images/{imgUrl}(imgUrl=${product.imageUrl})}"
+                         class="center-block">
+                </div>
+            </div>
+            <div class="row course-listing-extra-info col-xs-12">
+                <div class="col-xs-8">
+                    <img align="left" alt="John Thompson"
+                         src="../static/images/instructor_jt.jpg"
+                         th:src="@{/images/{imgUrl}(imgUrl=${product.author.image})}"
+                         class="img-circle"/>
+                    <div class="small course-author-name"
+                         th:text="|${product.author.firstName} ${product.author.lastName}|">
+                        Author Name
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="small course-price" th:text="${product.price==0 ? 'FREE' : ('$'+product.price)}">
+                        $PRICE
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div>
