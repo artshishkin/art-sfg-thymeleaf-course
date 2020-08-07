@@ -156,7 +156,7 @@
     <form class="form-horizontal" action="#" th:action="@{/checkout}" method="post" th:object="${command}">
 
         <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-            <p th:text="#{checkoutCommand.hasErrors}">Error Message</p>
+            <p th:text="#{commands.fixErrorsBelow}">Error Message</p>
         </div>
 
         <div class="form-group" th:class="${#fields.hasErrors('firstName')?'form-group has-error':'form-group'}">
