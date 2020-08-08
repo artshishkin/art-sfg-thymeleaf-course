@@ -33,10 +33,20 @@
 <!--</div>-->
 
 <div class="container">
-
+    <!--/*@thymesVar id="username" type="java.lang.String"*/-->
     <div class="row" sec:authorize="isAuthenticated()">
         <div class="col-md-6 col-md-offset-3" style="color: lightgreen">
             <h2>User is Logged In</h2>
+            Name
+            <p sec:authentication="name">My Name</p>
+            principal.username
+            <p sec:authentication="principal.username">My Name</p>
+            Password
+            <p sec:authentication="principal.password">My Name</p>
+            Credentials
+            <p sec:authentication="credentials">My Credentials</p>
+            Authorities
+            <p sec:authentication="principal.authorities">My Authorities</p>
         </div>
     </div>
     <div class="row" sec:authorize="isAnonymous()">
