@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title th:text="#{index.page.title}">Page Title</title>
@@ -32,20 +33,23 @@
 <!--</div>-->
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+
+    <div class="row" sec:authorize="isAuthenticated()">
+        <div class="col-md-6 col-md-offset-3" style="color: lightgreen">
             <h2>User is Logged In</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+    <div class="row" sec:authorize="isAnonymous()">
+        <div class="col-md-6 col-md-offset-3" style="color: red">
             <h2>User is Logged Out</h2>
         </div>
-    </div><div class="row">
+    </div>
+    <div class="row" sec:authorize="isAuthenticated()">
         <div class="col-md-6 col-md-offset-3">
             <h2>User has role ADMIN</h2>
         </div>
-    </div><div class="row">
+    </div>
+    <div class="row" sec:authorize="isAuthenticated()">
         <div class="col-md-6 col-md-offset-3">
             <h2>User has role USER</h2>
         </div>
