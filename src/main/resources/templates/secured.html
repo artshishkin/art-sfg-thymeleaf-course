@@ -44,14 +44,21 @@
             <h2>User is Logged Out</h2>
         </div>
     </div>
-    <div class="row" sec:authorize="isAuthenticated()">
+    <div class="row" sec:authorize="hasRole('ROLE_ADMIN')">
         <div class="col-md-6 col-md-offset-3">
             <h2>User has role ADMIN</h2>
         </div>
     </div>
-    <div class="row" sec:authorize="isAuthenticated()">
+    <div class="row" sec:authorize="hasRole('ROLE_USER')">
         <div class="col-md-6 col-md-offset-3">
             <h2>User has role USER</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <a sec:authorize="isAnonymous()" href="#" th:href="@{/login}" class="btn btn-primary"
+               th:text="#{login.form.welcome}">Login</a>
+            <a sec:authorize="isAuthenticated()" href="#" th:href="@{/logout}" class="btn btn-primary">Logout</a>
         </div>
     </div>
 
